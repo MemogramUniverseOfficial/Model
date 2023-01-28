@@ -1,0 +1,124 @@
+7767517
+122 137
+Input                    NN_input                 0 1 NN_input
+Convolution              Conv_0                   1 1 NN_input 585 0=16 1=3 3=2 4=1 5=1 6=432
+HardSwish                Div_8                    1 1 585 258 0=1.666667e-01
+ConvolutionDepthWise     Conv_9                   1 1 258 261 0=16 1=3 3=2 4=1 5=1 6=144 7=16 9=1
+Split                    splitncnn_0              1 2 261 261_splitncnn_0 261_splitncnn_1
+Pooling                  GlobalAveragePool_11     1 1 261_splitncnn_1 262 0=1 4=1
+InnerProduct             Conv_12                  1 1 262 264 0=8 1=1 2=128 9=1
+InnerProduct             Conv_14                  1 1 264 265 0=16 1=1 2=128
+HardSigmoid              Div_21                   1 1 265 272 0=1.666667e-01
+BinaryOp                 Mul_22                   2 1 272 261_splitncnn_0 273 0=2
+Convolution              Conv_23                  1 1 273 591 0=16 1=1 5=1 6=256
+Convolution              Conv_24                  1 1 591 278 0=72 1=1 5=1 6=1152 9=1
+ConvolutionDepthWise     Conv_26                  1 1 278 281 0=72 1=3 3=2 4=1 5=1 6=648 7=72 9=1
+Convolution              Conv_28                  1 1 281 600 0=24 1=1 5=1 6=1728
+Split                    splitncnn_1              1 2 600 600_splitncnn_0 600_splitncnn_1
+Convolution              Conv_29                  1 1 600_splitncnn_1 286 0=88 1=1 5=1 6=2112 9=1
+ConvolutionDepthWise     Conv_31                  1 1 286 289 0=88 1=3 4=1 5=1 6=792 7=88 9=1
+Convolution              Conv_33                  1 1 289 609 0=24 1=1 5=1 6=2112
+BinaryOp                 Add_34                   2 1 609 600_splitncnn_0 292
+Convolution              Conv_35                  1 1 292 612 0=96 1=1 5=1 6=2304
+HardSwish                Div_43                   1 1 612 302 0=1.666667e-01
+ConvolutionDepthWise     Conv_44                  1 1 302 615 0=96 1=5 3=2 4=2 5=1 6=2400 7=96
+HardSwish                Div_52                   1 1 615 312 0=1.666667e-01
+Split                    splitncnn_2              1 2 312 312_splitncnn_0 312_splitncnn_1
+Pooling                  GlobalAveragePool_53     1 1 312_splitncnn_1 313 0=1 4=1
+InnerProduct             Conv_54                  1 1 313 315 0=24 1=1 2=2304 9=1
+InnerProduct             Conv_56                  1 1 315 316 0=96 1=1 2=2304
+HardSigmoid              Div_63                   1 1 316 323 0=1.666667e-01
+BinaryOp                 Mul_64                   2 1 323 312_splitncnn_0 324 0=2
+Convolution              Conv_65                  1 1 324 618 0=40 1=1 5=1 6=3840
+Split                    splitncnn_3              1 2 618 618_splitncnn_0 618_splitncnn_1
+Convolution              Conv_66                  1 1 618_splitncnn_1 621 0=240 1=1 5=1 6=9600
+HardSwish                Div_74                   1 1 621 336 0=1.666667e-01
+ConvolutionDepthWise     Conv_75                  1 1 336 624 0=240 1=5 4=2 5=1 6=6000 7=240
+HardSwish                Div_83                   1 1 624 346 0=1.666667e-01
+Split                    splitncnn_4              1 2 346 346_splitncnn_0 346_splitncnn_1
+Pooling                  GlobalAveragePool_84     1 1 346_splitncnn_1 347 0=1 4=1
+InnerProduct             Conv_85                  1 1 347 349 0=64 1=1 2=15360 9=1
+InnerProduct             Conv_87                  1 1 349 350 0=240 1=1 2=15360
+HardSigmoid              Div_94                   1 1 350 357 0=1.666667e-01
+BinaryOp                 Mul_95                   2 1 357 346_splitncnn_0 358 0=2
+Convolution              Conv_96                  1 1 358 627 0=40 1=1 5=1 6=9600
+BinaryOp                 Add_97                   2 1 627 618_splitncnn_0 361
+Split                    splitncnn_5              1 2 361 361_splitncnn_0 361_splitncnn_1
+Convolution              Conv_98                  1 1 361_splitncnn_1 630 0=240 1=1 5=1 6=9600
+HardSwish                Div_106                  1 1 630 371 0=1.666667e-01
+ConvolutionDepthWise     Conv_107                 1 1 371 633 0=240 1=5 4=2 5=1 6=6000 7=240
+HardSwish                Div_115                  1 1 633 381 0=1.666667e-01
+Split                    splitncnn_6              1 2 381 381_splitncnn_0 381_splitncnn_1
+Pooling                  GlobalAveragePool_116    1 1 381_splitncnn_1 382 0=1 4=1
+InnerProduct             Conv_117                 1 1 382 384 0=64 1=1 2=15360 9=1
+InnerProduct             Conv_119                 1 1 384 385 0=240 1=1 2=15360
+HardSigmoid              Div_126                  1 1 385 392 0=1.666667e-01
+BinaryOp                 Mul_127                  2 1 392 381_splitncnn_0 393 0=2
+Convolution              Conv_128                 1 1 393 636 0=40 1=1 5=1 6=9600
+BinaryOp                 Add_129                  2 1 636 361_splitncnn_0 396
+Convolution              Conv_130                 1 1 396 639 0=120 1=1 5=1 6=4800
+HardSwish                Div_138                  1 1 639 406 0=1.666667e-01
+ConvolutionDepthWise     Conv_139                 1 1 406 642 0=120 1=5 4=2 5=1 6=3000 7=120
+HardSwish                Div_147                  1 1 642 416 0=1.666667e-01
+Split                    splitncnn_7              1 2 416 416_splitncnn_0 416_splitncnn_1
+Pooling                  GlobalAveragePool_148    1 1 416_splitncnn_1 417 0=1 4=1
+InnerProduct             Conv_149                 1 1 417 419 0=32 1=1 2=3840 9=1
+InnerProduct             Conv_151                 1 1 419 420 0=120 1=1 2=3840
+HardSigmoid              Div_158                  1 1 420 427 0=1.666667e-01
+BinaryOp                 Mul_159                  2 1 427 416_splitncnn_0 428 0=2
+Convolution              Conv_160                 1 1 428 645 0=48 1=1 5=1 6=5760
+Split                    splitncnn_8              1 2 645 645_splitncnn_0 645_splitncnn_1
+Convolution              Conv_161                 1 1 645_splitncnn_1 648 0=144 1=1 5=1 6=6912
+HardSwish                Div_169                  1 1 648 440 0=1.666667e-01
+ConvolutionDepthWise     Conv_170                 1 1 440 651 0=144 1=5 4=2 5=1 6=3600 7=144
+HardSwish                Div_178                  1 1 651 450 0=1.666667e-01
+Split                    splitncnn_9              1 2 450 450_splitncnn_0 450_splitncnn_1
+Pooling                  GlobalAveragePool_179    1 1 450_splitncnn_1 451 0=1 4=1
+InnerProduct             Conv_180                 1 1 451 453 0=40 1=1 2=5760 9=1
+InnerProduct             Conv_182                 1 1 453 454 0=144 1=1 2=5760
+HardSigmoid              Div_189                  1 1 454 461 0=1.666667e-01
+BinaryOp                 Mul_190                  2 1 461 450_splitncnn_0 462 0=2
+Convolution              Conv_191                 1 1 462 654 0=48 1=1 5=1 6=6912
+BinaryOp                 Add_192                  2 1 654 645_splitncnn_0 465
+Convolution              Conv_193                 1 1 465 657 0=288 1=1 5=1 6=13824
+HardSwish                Div_201                  1 1 657 475 0=1.666667e-01
+ConvolutionDepthWise     Conv_202                 1 1 475 660 0=288 1=5 3=2 4=2 5=1 6=7200 7=288
+HardSwish                Div_210                  1 1 660 485 0=1.666667e-01
+Split                    splitncnn_10             1 2 485 485_splitncnn_0 485_splitncnn_1
+Pooling                  GlobalAveragePool_211    1 1 485_splitncnn_1 486 0=1 4=1
+InnerProduct             Conv_212                 1 1 486 488 0=72 1=1 2=20736 9=1
+InnerProduct             Conv_214                 1 1 488 489 0=288 1=1 2=20736
+HardSigmoid              Div_221                  1 1 489 496 0=1.666667e-01
+BinaryOp                 Mul_222                  2 1 496 485_splitncnn_0 497 0=2
+Convolution              Conv_223                 1 1 497 663 0=96 1=1 5=1 6=27648
+Split                    splitncnn_11             1 2 663 663_splitncnn_0 663_splitncnn_1
+Convolution              Conv_224                 1 1 663_splitncnn_1 666 0=576 1=1 5=1 6=55296
+HardSwish                Div_232                  1 1 666 509 0=1.666667e-01
+ConvolutionDepthWise     Conv_233                 1 1 509 669 0=576 1=5 4=2 5=1 6=14400 7=576
+HardSwish                Div_241                  1 1 669 519 0=1.666667e-01
+Split                    splitncnn_12             1 2 519 519_splitncnn_0 519_splitncnn_1
+Pooling                  GlobalAveragePool_242    1 1 519_splitncnn_1 520 0=1 4=1
+InnerProduct             Conv_243                 1 1 520 522 0=144 1=1 2=82944 9=1
+InnerProduct             Conv_245                 1 1 522 523 0=576 1=1 2=82944
+HardSigmoid              Div_252                  1 1 523 530 0=1.666667e-01
+BinaryOp                 Mul_253                  2 1 530 519_splitncnn_0 531 0=2
+Convolution              Conv_254                 1 1 531 672 0=96 1=1 5=1 6=55296
+BinaryOp                 Add_255                  2 1 672 663_splitncnn_0 534
+Split                    splitncnn_13             1 2 534 534_splitncnn_0 534_splitncnn_1
+Convolution              Conv_256                 1 1 534_splitncnn_1 675 0=576 1=1 5=1 6=55296
+HardSwish                Div_264                  1 1 675 544 0=1.666667e-01
+ConvolutionDepthWise     Conv_265                 1 1 544 678 0=576 1=5 4=2 5=1 6=14400 7=576
+HardSwish                Div_273                  1 1 678 554 0=1.666667e-01
+Split                    splitncnn_14             1 2 554 554_splitncnn_0 554_splitncnn_1
+Pooling                  GlobalAveragePool_274    1 1 554_splitncnn_1 555 0=1 4=1
+InnerProduct             Conv_275                 1 1 555 557 0=144 1=1 2=82944 9=1
+InnerProduct             Conv_277                 1 1 557 558 0=576 1=1 2=82944
+HardSigmoid              Div_284                  1 1 558 565 0=1.666667e-01
+BinaryOp                 Mul_285                  2 1 565 554_splitncnn_0 566 0=2
+Convolution              Conv_286                 1 1 566 681 0=96 1=1 5=1 6=55296
+BinaryOp                 Add_287                  2 1 681 534_splitncnn_0 569
+Convolution              Conv_288                 1 1 569 684 0=576 1=1 5=1 6=55296
+HardSwish                Div_296                  1 1 684 579 0=1.666667e-01
+Pooling                  GlobalAveragePool_297    1 1 579 581 0=1 4=1
+InnerProduct             Gemm_299                 1 1 581 583 0=64 1=1 2=36864 9=2 -23310=1,1.000000e+00
+InnerProduct             Gemm_301                 1 1 583 NN_output 0=2 1=1 2=128
